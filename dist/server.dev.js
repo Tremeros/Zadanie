@@ -37,7 +37,7 @@ app["delete"]('/:id', function (req, res) {
     });
   } else {
     fs.writeFile("".concat(__dirname, "/database.json"), JSON.stringify(dataBase), function (err) {
-      res.status(204).json(dataBase);
+      res.status(200).json(dataBase);
     });
   }
 });

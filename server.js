@@ -39,7 +39,7 @@ app.delete('/:id', (req, res) => {
        res.status(404).json({status: 'Fail', message: 'Invalid ID'})
     } else {
         fs.writeFile(`${__dirname}/database.json`, JSON.stringify(dataBase), err => {
-            res.status(204).json(dataBase);
+            res.status(200).json(dataBase);
           });
     }
     

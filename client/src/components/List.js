@@ -3,10 +3,15 @@ import {connect} from 'react-redux';
 import {Alert} from './Alert';
 import {ListItem} from './ListItem';
 
-const _List = ({records, error}) => {
+
+const _List = ({records, error, getRecodrs}) => {
+
+    
+
     const list = records.map(item => <ListItem key={item.id} item={item}/>)
+    
     return (
-        
+        console.log(records),
         <div>
             <table className='ui celled table'>
                 <thead>
