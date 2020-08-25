@@ -12,7 +12,6 @@ var app = express();
 app.use(express.json());
 app.use(cors());
 app.get('/', function (req, res) {
-  // res.send(dataBase); 
   res.status(200).json(dataBase);
 });
 app.post('/', function (req, res) {
