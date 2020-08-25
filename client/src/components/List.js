@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import {Alert} from './Alert';
 import {ListItem} from './ListItem';
 
-const _List = (props) => {
-    const list = props.records.map(item => <ListItem key={item.id} item={item}/>)
+const _List = ({records, error}) => {
+    const list = records.map(item => <ListItem key={item.id} item={item}/>)
     return (
         
         <div>
@@ -19,7 +19,7 @@ const _List = (props) => {
                 </thead>
                 <tbody>{list}</tbody>
             </table>
-                {props.error && <Alert msg={props.error}/>}
+                {error && <Alert msg={error}/>}
         </div>
     )
 }
