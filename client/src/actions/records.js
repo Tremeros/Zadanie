@@ -30,9 +30,10 @@ export const addRecord = (record) => async dispatch => {
 
           dispatch({type: GET_RECORDS, payload: res.data})
     } catch (err) {
+        console.log(err.response.data.errors)
         dispatch({
             type: ERROR,
-            payload: {msg: 'Fail to add record'}
+            payload: err.response.data.errors
           });
     }
 }
@@ -44,7 +45,7 @@ export const deleteRecord = (id) => async dispatch => {
     } catch (err) {
         dispatch({
             type: ERROR,
-            payload: {msg: 'Fail to delete record'}
+            payload: "Fail to delete record"
           });
     }
 }

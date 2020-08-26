@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
-const cors = require('cors')
+const cors = require('cors');
+const {check, validationResult} = require('express-validator/check');
 
 const dataBase = JSON.parse(fs.readFileSync(`${__dirname}/database.json`, "utf8"));
 
@@ -19,7 +20,16 @@ app.get('/', (req, res) => {
     res.status(200).json(dataBase) 
 })
 
-app.post('/', (req, res) => {
+app.post('/', [
+    check('name', 'Name is required').not().isEmpty(),
+    check('language', 'Language is required').not().isEmpty(),
+    check('description', 'Description is required').not().isEmpty(),
+    check('initRelease', 'Init Release is required').not().isEmpty(),
+], (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
     const newId = dataBase[dataBase.length - 1].id + 1;
     const newElement = Object.assign({id: newId}, req.body);
 
