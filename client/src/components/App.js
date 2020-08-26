@@ -10,18 +10,15 @@ import {Loading} from './Loading';
 class _App extends React.Component {
    
 
-   async componentDidMount() {
-    await this.props.getRecords();
+   componentDidMount() {
+     this.props.getRecords();
    }
  
-
-    render() {
-
-       
+    render() {       
         return (
             <div className='ui container'>
                 <h1 className='ui header'>Hi there</h1>
-                <Form/>
+                 <Form/>
                  <Alert error={this.props.error}/>
                  {this.props.loading ? <Loading /> : <List />}                
             </div>
