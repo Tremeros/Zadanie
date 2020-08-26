@@ -51,4 +51,8 @@ class _Form extends React.Component {
     }
 }
 
+Form.propTypes = {
+  addRecord: PropTypes.func.isRequired
+}
+
 export const Form = connect(null, {addRecord})(_Form);

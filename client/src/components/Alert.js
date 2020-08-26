@@ -13,3 +13,7 @@ export const Alert = ({error}) => {
         </div>
     )
 }
+
+Alert.propType = {
+    error: PropTypes.array.isRequired
+}

@@ -26,6 +26,12 @@ class _App extends React.Component {
     }
 }
 
+App.propTypes = {
+    records: PropTypes.array,isRequired,
+    error: PorpTypes.array.isRequired,
+    getRecords: PropTypes.func.isRequired
+}
+
 const mapStateToProps = state => {
     return {
       records: state.records.records,

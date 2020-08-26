@@ -18,4 +18,8 @@ const _ListItem = ({deleteRecord, item: {id, name, language, description, initRe
     )
 }
 
+ListItem.propTypes = {
+    deleteRecord: PropTypes.func.isRequired
+}
+
 export const ListItem = connect(null, {deleteRecord})(_ListItem);

@@ -29,6 +29,11 @@ const _List = ({records, error, getRecodrs}) => {
     )
 }
 
+List.propTypes = {
+    records: PropTypes.array,isRequired,
+    error: PorpTypes.array.isRequired
+}
+
 const mapStateToProps = state => {
     return {
        records: state.records.records,
