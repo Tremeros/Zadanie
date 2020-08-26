@@ -5,6 +5,7 @@ import {getRecords} from '../actions/records';
 import {List} from './List';
 import {Form} from './Form';
 import {Alert} from './Alert';
+import {Loading} from './Loading';
 
 class _App extends React.Component {
    
@@ -22,7 +23,7 @@ class _App extends React.Component {
                 <h1 className='ui header'>Hi there</h1>
                 <Form/>
                  <Alert error={this.props.error}/>
-                 <List />
+                 {this.props.loading ? <Loading /> : <List />}                
             </div>
         )
     }
@@ -31,13 +32,15 @@ class _App extends React.Component {
 _App.propTypes = {
     records: PropTypes.array.isRequired,
     error: PropTypes.array.isRequired,
-    getRecords: PropTypes.func.isRequired
+    getRecords: PropTypes.func.isRequired,
+    loading: PropTypes.bool
 }
 
 const mapStateToProps = state => {
     return {
       records: state.records.records,
-      error: state.records.error
+      error: state.records.error,
+      loading: state.records.loading
     }
    }
 
