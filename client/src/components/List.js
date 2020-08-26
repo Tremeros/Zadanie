@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import {Alert} from './Alert';
 import {ListItem} from './ListItem';
 
@@ -29,9 +30,9 @@ const _List = ({records, error, getRecodrs}) => {
     )
 }
 
-List.propTypes = {
-    records: PropTypes.array,isRequired,
-    error: PorpTypes.array.isRequired
+_List.propTypes = {
+    records: PropTypes.array.isRequired,
+    error: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => {

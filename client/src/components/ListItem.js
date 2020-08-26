@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import {deleteRecord} from '../actions/records';
 
 const _ListItem = ({deleteRecord, item: {id, name, language, description, initRelease}}) => {
@@ -18,7 +19,7 @@ const _ListItem = ({deleteRecord, item: {id, name, language, description, initRe
     )
 }
 
-ListItem.propTypes = {
+_ListItem.propTypes = {
     deleteRecord: PropTypes.func.isRequired
 }
 

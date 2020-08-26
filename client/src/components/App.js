@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import {getRecords} from '../actions/records';
 import {List} from './List';
 import {Form} from './Form';
@@ -26,9 +27,9 @@ class _App extends React.Component {
     }
 }
 
-App.propTypes = {
-    records: PropTypes.array,isRequired,
-    error: PorpTypes.array.isRequired,
+_App.propTypes = {
+    records: PropTypes.array.isRequired,
+    error: PropTypes.array.isRequired,
     getRecords: PropTypes.func.isRequired
 }
 

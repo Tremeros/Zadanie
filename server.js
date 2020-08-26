@@ -16,8 +16,7 @@ app.use(cors())
 
 
 app.get('/', (req, res) => {  
-    
-    res.status(200).json(dataBase) 
+    res.status(200).json(dataBase)
 })
 
 app.post('/', [
@@ -28,6 +27,7 @@ app.post('/', [
 ], (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+        console.log(errors)
       return res.status(400).json({ errors: errors.array() });
     }
     const newId = dataBase[dataBase.length - 1].id + 1;

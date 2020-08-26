@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import {addRecord} from '../actions/records';
 
 
@@ -51,7 +52,7 @@ class _Form extends React.Component {
     }
 }
 
-Form.propTypes = {
+_Form.propTypes = {
   addRecord: PropTypes.func.isRequired
 }
 

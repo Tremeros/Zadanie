@@ -9,9 +9,10 @@ export const getRecords = () => async dispatch => {
             payload: res.data
         })
     } catch (err) {
+
         dispatch({
             type: ERROR,
-            payload: {msg: 'Fail to load records'}
+            payload: [{msg: 'Fail to load records'}]
           });
     }
 }
@@ -45,7 +46,7 @@ export const deleteRecord = (id) => async dispatch => {
     } catch (err) {
         dispatch({
             type: ERROR,
-            payload: "Fail to delete record"
+            payload: [{msg: 'Fail to delete records'}]
           });
     }
 }

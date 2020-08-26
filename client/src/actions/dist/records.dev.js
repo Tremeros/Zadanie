@@ -36,9 +36,9 @@ var getRecords = function getRecords() {
             _context.t0 = _context["catch"](0);
             dispatch({
               type: _types.ERROR,
-              payload: {
+              payload: [{
                 msg: 'Fail to load records'
-              }
+              }]
             });
 
           case 10:
@@ -123,7 +123,9 @@ var deleteRecord = function deleteRecord(id) {
             _context3.t0 = _context3["catch"](0);
             dispatch({
               type: _types.ERROR,
-              payload: "Fail to delete record"
+              payload: [{
+                msg: 'Fail to delete records'
+              }]
             });
 
           case 10:
