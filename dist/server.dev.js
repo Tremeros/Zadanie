@@ -22,7 +22,6 @@ app.post('/', [check('name', 'Name is required').not().isEmpty(), check('languag
   var errors = validationResult(req);
 
   if (!errors.isEmpty()) {
-    console.log(errors);
     return res.status(400).json({
       errors: errors.array()
     });
@@ -41,7 +40,7 @@ app["delete"]('/:id', function (req, res) {
   var index = dataBase.findIndex(function (item) {
     return item.id == req.params.id;
   });
-  var element = dataBase.splice(index, 1);
+  dataBase.splice(index, 1);
 
   if (index === -1) {
     res.status(404).json({

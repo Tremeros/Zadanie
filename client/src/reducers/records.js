@@ -11,7 +11,7 @@ export const recordsReducer = (state = initialState, action) => {
 
     switch(type) {
         case GET_RECORDS:
-            return {...state, records: payload, loading: false};
+            return {...state, records: payload, loading: false, error: []};
         case ERROR:
             return {
                 ...state,

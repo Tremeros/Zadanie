@@ -25,20 +25,17 @@ const _List = ({records, error, getRecodrs}) => {
                 </thead>
                 <tbody>{list}</tbody>
             </table>
-                {error && <Alert msg={error}/>}
         </div>
     )
 }
 
 _List.propTypes = {
-    records: PropTypes.array.isRequired,
-    error: PropTypes.array.isRequired
+    records: PropTypes.array.isRequired
 }
 
 const mapStateToProps = state => {
     return {
-       records: state.records.records,
-       error: state.records.error
+       records: state.records.records
     }
    }
 

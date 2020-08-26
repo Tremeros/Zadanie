@@ -37,7 +37,8 @@ var recordsReducer = function recordsReducer() {
     case _types.GET_RECORDS:
       return _objectSpread({}, state, {
         records: payload,
-        loading: false
+        loading: false,
+        error: []
       });
 
     case _types.ERROR:

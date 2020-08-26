@@ -10,13 +10,13 @@ const port = 5000;
 const app = express();
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 
 
 
 app.get('/', (req, res) => {  
-    res.status(200).json(dataBase)
+    res.status(200).json(dataBase);
 })
 
 app.post('/', [
@@ -26,10 +26,11 @@ app.post('/', [
     check('initRelease', 'Init Release is required').not().isEmpty(),
 ], (req, res) => {
     const errors = validationResult(req);
+
     if (!errors.isEmpty()) {
-        console.log(errors)
       return res.status(400).json({ errors: errors.array() });
     }
+
     const newId = dataBase[dataBase.length - 1].id + 1;
     const newElement = Object.assign({id: newId}, req.body);
 
@@ -43,7 +44,7 @@ app.post('/', [
 app.delete('/:id', (req, res) => {
     
     const index = dataBase.findIndex((item) => item.id == req.params.id);
-    const element = dataBase.splice(index, 1);
+    dataBase.splice(index, 1);
 
     if(index === -1) {
        res.status(404).json({status: 'Fail', message: 'Invalid ID'})

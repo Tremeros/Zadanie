@@ -17,12 +17,19 @@ class _Form extends React.Component {
 
     onChangehandle = (e) => {
         this.setState({[e.target.name]: e.target.value});
-        console.log(this.state.text)
       }
    
       submitForm = async (e) => {
           e.preventDefault();
-          this.props.addRecord({name: this.state.name, language: this.state.language, description: this.state.description, initRelease: this.state.initRelease})
+
+          const record = {
+            name: this.state.name,
+            language: this.state.language,
+            description: this.state.description,
+            initRelease: this.state.initRelease
+          }
+
+          this.props.addRecord(record);
       }
 
     render() {
