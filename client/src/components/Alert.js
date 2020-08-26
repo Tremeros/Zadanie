@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export const Alert = ({error}) => {
     return (
         <div>
-            {error.map((error, index) => {
+            {error && error.map((error, index) => {
                 return <div key={index} className="ui negative message">
                 <p>{error.msg}</p>
              </div>

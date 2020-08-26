@@ -3,7 +3,7 @@ import {GET_RECORDS, ERROR} from '../actions/types';
 const initialState = {
     records: [],
     loading: true,
-    error: null
+    error: []
 }
 
 export const recordsReducer = (state = initialState, action) => {
@@ -15,7 +15,7 @@ export const recordsReducer = (state = initialState, action) => {
         case ERROR:
             return {
                 ...state,
-                error: payload,
+                error: [...payload],
                 loading: false               
               }
               default:

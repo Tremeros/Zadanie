@@ -21,7 +21,8 @@ class _App extends React.Component {
             <div className='ui container'>
                 <h1 className='ui header'>Hi there</h1>
                 <Form/>
-                {this.props.error ? <Alert error={this.props.error}/> : <List /> }
+                 <Alert error={this.props.error}/>
+                 <List />
             </div>
         )
     }
